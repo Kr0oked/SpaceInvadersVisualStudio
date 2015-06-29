@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8151C0A1-2D80-4A86-BCD0-A57E89773ADC}</ProjectGuid>
+    <RootNamespace>SpaceInvaders</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Externals\include;$(SolutionDir)OSka\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\;$(SolutionDir)\Externals\lib;$(SolutionDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lib_$(Configuration).lib;soil.lib;glew32.lib;glut32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Externals\include;$(SolutionDir)OSka\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\;$(SolutionDir)\Externals\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lib_$(Configuration).lib;soil.lib;glew32.lib;glut32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Camera\InterfaceCamera.cpp" />
+    <ClCompile Include="Camera\SceneCamera.cpp" />
+    <ClCompile Include="Game\Background\Background.cpp" />
+    <ClCompile Include="Game\Interface\GameOver.cpp" />
+    <ClCompile Include="Game\Interface\GameWin.cpp" />
+    <ClCompile Include="Game\Object\Item.cpp" />
+    <ClCompile Include="Game\Object\Rectangle.cpp" />
+    <ClCompile Include="Game\Object\SpaceInvader.cpp" />
+    <ClCompile Include="Game\Object\SpaceInvaderShot.cpp" />
+    <ClCompile Include="Game\Object\SpaceShip.cpp" />
+    <ClCompile Include="Game\Object\SpaceShipShot.cpp" />
+    <ClCompile Include="Game\Object\SpaceShipSpecialShot.cpp" />
+    <ClCompile Include="lib\tinyobjloader\tiny_obj_loader.cc" />
+    <ClCompile Include="mainOpenGL.cpp" />
+    <ClCompile Include="ObjectLoader\ObjectLoader.cpp" />
+    <ClCompile Include="Registry\InputRegistry.cpp" />
+    <ClCompile Include="Registry\ObjectRegistry.cpp" />
+    <ClCompile Include="Renderer\ObjectRenderer.cpp" />
+    <ClCompile Include="Renderer\TextRenderer.cpp" />
+    <ClCompile Include="SceneBuilder\SpaceInvadersSceneBuilder.cpp" />
+    <ClCompile Include="TextureLoader\TextureLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Camera\ICamera.h" />
+    <ClInclude Include="Camera\InterfaceCamera.h" />
+    <ClInclude Include="Camera\SceneCamera.h" />
+    <ClInclude Include="Factory\Factory.h" />
+    <ClInclude Include="Game\Background\Background.h" />
+    <ClInclude Include="Game\IBackground.h" />
+    <ClInclude Include="Game\IInterface.h" />
+    <ClInclude Include="Game\IItem.h" />
+    <ClInclude Include="Game\Interface\GameOver.h" />
+    <ClInclude Include="Game\Interface\GameWin.h" />
+    <ClInclude Include="Game\IObject.h" />
+    <ClInclude Include="Game\IShootable.h" />
+    <ClInclude Include="Game\IShot.h" />
+    <ClInclude Include="Game\Object\Item.h" />
+    <ClInclude Include="Game\Object\Rectangle.h" />
+    <ClInclude Include="Game\Object\SpaceInvader.h" />
+    <ClInclude Include="Game\Object\SpaceInvaderShot.h" />
+    <ClInclude Include="Game\Object\SpaceShip.h" />
+    <ClInclude Include="Game\Object\SpaceShipShot.h" />
+    <ClInclude Include="Game\Object\SpaceShipSpecialShot.h" />
+    <ClInclude Include="lib\tinyobjloader\tiny_obj_loader.h" />
+    <ClInclude Include="Model\Object.h" />
+    <ClInclude Include="Model\Text.h" />
+    <ClInclude Include="ObjectLoader\ObjectLoader.h" />
+    <ClInclude Include="Registry\GameRegistry.h" />
+    <ClInclude Include="Registry\InputRegistry.h" />
+    <ClInclude Include="Registry\ObjectRegistry.h" />
+    <ClInclude Include="Renderer\ObjectRenderer.h" />
+    <ClInclude Include="Renderer\TextRenderer.h" />
+    <ClInclude Include="SceneBuilder\ISceneBuilder.h" />
+    <ClInclude Include="SceneBuilder\SpaceInvadersSceneBuilder.h" />
+    <ClInclude Include="TextureLoader\ITextureLoader.h" />
+    <ClInclude Include="TextureLoader\TextureLoader.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
